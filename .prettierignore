@@ -1,0 +1,6 @@
+**/generated/
+old
+build
+.history
+.infra
+kubernetes
