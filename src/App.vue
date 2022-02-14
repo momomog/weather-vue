@@ -60,5 +60,7 @@ body {
 
 #content {
   padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 </style>

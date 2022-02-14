@@ -11,7 +11,7 @@ export const userApi = {
           resolve({
             id: 10,
             login: 'admin',
-            name: 'Сергей',
+            name: 'Тихон',
             age: 18,
           })
         else reject(new Error('Пользователь не найден. Проверьте введенные данные'))

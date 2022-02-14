@@ -8,7 +8,7 @@
     <div v-if="getWeatherStatus === StatusCodes.ready && current" class="body">
       <div class="city">{{ cityName }}</div>
       <div class="date">
-        Сейчас {{ new Date().toLocaleTimeString().slice(0, 5) }}. Восход солнца в
+        Сейчас {{ currentTime }}. Восход солнца в
         {{ new Date(current.sunrise * 1000).toLocaleTimeString().slice(0, 5) }}
       </div>
       <div class="current">
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { computed, defineComponent, watchEffect } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import { getImageUrlByCode } from '@/lib'
 import { useStore } from '@/store/lib'
 import windIcon from '../../assets/icons/wind.svg'
@@ -63,15 +63,17 @@ export default defineComponent({
     const weatherErrorMessage = computed(() => store.state.weather.errorMessage)
     const cityName = computed(() => store.getters.cityName)
     const current = computed(() => store.getters.currentWeather)
+    const currentTime = ref('')
 
-    watchEffect(() => {
-      console.log(userLocationErrorMessage.value)
-    })
+    setInterval(() => {
+      currentTime.value = new Date().toLocaleTimeString().slice(0, 5)
+    }, 1000)
 
     return {
       current,
       cityName,
       getWeatherStatus,
+      currentTime,
       weatherErrorMessage,
       userLocationErrorMessage,
       getImageUrlByCode,
@@ -175,12 +177,12 @@ export default defineComponent({
     filter: brightness(0.8);
   }
   .loader {
-    margin-top: 25%;
+    margin-top: 15%;
   }
   .error {
-    margin-top: 30%;
+    margin-top: 20%;
     font-weight: bold;
-    color: #e13232;
+    color: #f1ecec;
     font-size: 18px;
     position: relative;
     z-index: 2;
