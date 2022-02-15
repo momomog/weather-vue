@@ -26,7 +26,6 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable vue/no-dupe-keys */
 import { computed, defineComponent } from 'vue'
 import { useStore } from '@/store/lib'
 import { getImageUrlByCode } from '@/lib'

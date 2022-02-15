@@ -33,14 +33,13 @@ export default defineComponent({
     const current = computed(() => store.getters.currentWeather)
 
     watchEffect(() => {
-      if (userLocation.value.data.length > 0) {
-        store.dispatch(Actions.getWeather, userLocation.value.data)
-      }
+      if (userLocation.value.data.length > 0) store.dispatch(Actions.getWeather, userLocation.value.data)
     })
 
     onMounted(() => {
       store.dispatch(Actions.getUserLocation)
     })
+
     return {
       userLocation,
       current,

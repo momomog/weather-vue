@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref, onUnmounted } from 'vue'
 import { getImageUrlByCode } from '@/lib'
 import { useStore } from '@/store/lib'
 import windIcon from '../../assets/icons/wind.svg'
@@ -65,9 +65,13 @@ export default defineComponent({
     const current = computed(() => store.getters.currentWeather)
     const currentTime = ref('')
 
-    setInterval(() => {
+    const interval = setInterval(() => {
       currentTime.value = new Date().toLocaleTimeString().slice(0, 5)
     }, 1000)
+
+    onUnmounted(() => {
+      clearInterval(interval)
+    })
 
     return {
       current,

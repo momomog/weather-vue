@@ -1,5 +1,5 @@
 <template>
-  <div class="lds-ring" :style="{ width: `${wrapperSize}px`, height: `${wrapperSize}px` }">
+  <div class="lds-ring" :style="wrapperSize">
     <div :style="baseStyle"></div>
     <div :style="baseStyle"></div>
     <div :style="baseStyle"></div>
@@ -7,8 +7,7 @@
   </div>
 </template>
 
-<script>
-/* eslint-disable vue/no-dupe-keys */
+<script lang="ts">
 import { defineComponent, toRefs } from 'vue'
 export default defineComponent({
   name: 'loader',
@@ -19,6 +18,7 @@ export default defineComponent({
   setup(props) {
     const { size, color } = toRefs(props)
 
+    const wrapperSize = size.value ? `${size.value + 15}px` : '80px'
     const baseStyle = {
       width: `${size.value || 64}px`,
       height: `${size.value || 64}px`,
@@ -26,7 +26,7 @@ export default defineComponent({
     }
 
     return {
-      wrapperSize: size.value ? size.value + 15 : 80,
+      wrapperSize,
       baseStyle,
     }
   },

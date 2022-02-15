@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '/',
   configureWebpack: {
     devServer: {
       host: 'localhost',
@@ -8,7 +9,8 @@ module.exports = {
       historyApiFallback: true,
       proxy: {
         '/weather': {
-          target: 'https://api.openweathermap.org',
+          target: 'https://express-weather-heroku.herokuapp.com',
+          // target: 'http://localhost:7070',
           pathRewrite: { '^/weather': '/' },
           secure: false,
           changeOrigin: true,

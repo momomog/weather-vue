@@ -22,7 +22,6 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable vue/no-dupe-keys */
 import { computed, defineComponent } from 'vue'
 import { useStore } from '@/store/lib'
 import { getImageUrlByCode } from '@/lib'
@@ -73,6 +72,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 }
 .loader {
   margin: 0 auto;

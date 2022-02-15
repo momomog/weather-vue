@@ -18,6 +18,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'warn',
+    'vue/no-dupe-keys': 'off',
   },
   overrides: [
     {
