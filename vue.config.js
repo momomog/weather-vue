@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/',
+  publicPath: '/weather-vue/',
   configureWebpack: {
     devServer: {
       host: 'localhost',

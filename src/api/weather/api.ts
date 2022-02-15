@@ -7,7 +7,8 @@ import {
 } from '@/api/weather/types'
 
 const axiosInstance = axios.create({
-  baseURL: '/weather',
+  // baseURL: '/weather',
+  baseURL: 'https://express-weather-heroku.herokuapp.com',
   timeout: 10000,
 })
 const key = '5763846055e992c5f47c21ba66337e91'
