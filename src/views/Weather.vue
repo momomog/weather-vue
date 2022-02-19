@@ -52,6 +52,11 @@ export default defineComponent({
 .title {
   font-size: 22px;
   margin-bottom: 20px;
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }
 .wrap {
   display: flex;
@@ -62,8 +67,16 @@ export default defineComponent({
   > div {
     width: 49%;
   }
+  @media (max-width: 450px) {
+    flex-direction: column;
+    margin-bottom: 15px;
+    height: auto;
+    > div {
+      width: 100%;
+    }
+  }
 }
 .bottom {
-  height: 150px;
+  //height: 150px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="ywrapper">
     <yandex-map
       v-if="coords.length > 0 && status === StatusCodes.ready"
       :coords="coords"
@@ -56,7 +56,13 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
+.ywrapper {
+  height: 300px;
+  @media (max-width: 450px) {
+    height: 250px;
+  }
+}
 .ymap-container {
   width: 100%;
   height: 100%;

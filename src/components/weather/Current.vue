@@ -114,6 +114,9 @@ export default defineComponent({
     font-weight: 400;
     opacity: 0.7;
     margin-bottom: 22px;
+    @media (max-width: 450px) {
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -154,6 +157,9 @@ export default defineComponent({
   justify-content: space-between;
   width: 100%;
   margin-top: 25px;
+  @media (max-width: 450px) {
+    margin-top: 0;
+  }
   .desc {
     margin: 0 5px;
   }
@@ -171,6 +177,7 @@ export default defineComponent({
 
 .content {
   border-radius: 10px;
+  min-height: 250px;
   .background {
     position: absolute;
     top: 0;
@@ -179,6 +186,10 @@ export default defineComponent({
     width: 49%;
     border-radius: 10px;
     filter: brightness(0.8);
+    @media (max-width: 450px) {
+      width: 100%;
+      height: 52%;
+    }
   }
   .loader {
     margin-top: 15%;

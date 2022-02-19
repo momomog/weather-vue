@@ -68,6 +68,7 @@ export default defineComponent({
   background: rgba(58, 71, 96, 0.4);
   display: flex;
   z-index: 999;
+  padding: 0 10px;
 }
 .body {
   width: 600px;

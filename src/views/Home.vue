@@ -50,9 +50,13 @@
   </p>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 h1 {
   margin-bottom: 30px;
+
+  @media (max-width: 450px) {
+    font-size: 20px;
+  }
 }
 h3 {
   margin-bottom: 10px;
@@ -66,5 +70,8 @@ p {
 img {
   width: 50%;
   border-radius: 10px;
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 }
 </style>

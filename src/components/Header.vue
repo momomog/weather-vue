@@ -92,5 +92,13 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  nav {
+    display: flex;
+  }
 }
 </style>
